@@ -1,0 +1,138 @@
+@import url('reset.css');
+
+/* MY STYLES */
+
+.container {
+	width: 1200px;
+	margin: 0 auto;
+	background: #ccc;
+	position: relative;
+} 
+/* index.html */
+/* ?position
+		- static
+		- relative
+		- absolute
+		- fixed
+		- sticky
+*/
+
+.container > div {
+	min-height: 200px;
+}
+
+.bg-yellow {
+	background: yellow;
+	position: relative;
+	z-index: 1;
+}
+.bg-green {
+	background: green;
+	margin: 0 100px 0;
+	position: relative;
+	z-index: 2;
+	top: 50px;
+	/* left: 40px; */
+}
+.bg-orange {
+	background: orange;
+	position: fixed;
+	z-index: 10;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+.bg-red {
+	background: red;
+}
+.bg-blue {
+	background: blue;
+	z-index: 20;
+	position: relative;
+}
+.bg-black {
+	background: #000;
+	margin: -100px 0 0;
+	position: relative;
+	z-index: 10;
+}
+
+
+/* SECOND */
+/* список */
+.list li {
+	padding-left: 15px;
+	margin-bottom: 10px;
+	position: relative;
+}
+.list li::before {
+	content: '';
+	position: absolute;
+	top: 5px;
+	left: 0;
+	width: 6px;
+	height: 6px;
+	background: blue;
+	border-radius: 50%;
+}
+html {
+	font-size: 10px;
+}
+body {
+	font-size: 1.8rem;
+}
+.box {
+	max-width: 1200px;
+	margin: 0 auto;
+	background: #ccc;
+	padding: 20px;
+	font-size: 20px;
+}
+
+.box > p {
+	padding: 2rem;
+	background: orange;
+	font-size: 2rem;
+}
+
+/* .test {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: calc((100vw - 1200px) / 2);
+	width: calc(50vw - 600px);
+	background: blue;
+} */
+
+.cards {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 30px;
+}
+.card {
+	background: pink;
+	padding: 10px;
+	border: 2px solid blue;
+	flex: 0 1 calc(33.333% - 20px);
+	position: relative;
+}
+
+.card > div {
+	padding: 15px;
+	background: rgba(0,0,0, .5);
+	color: aliceblue;
+	position: absolute;
+	inset: 0;
+	align-items: center;
+	justify-content: center;
+	/* opacity: 0; */
+	display: none;
+}
+.card:hover {
+	box-shadow: 2px 2px 10px 0 #000;
+}
+.card:hover > div {
+	/* opacity: 1; */
+	display: flex;
+}
